@@ -5,7 +5,7 @@
 # time     : Mon 28 Jan 2019 09:41:21 PM CST
 #######################################################################
 
-DIRS := cplusplus purec pureasm
+DIRS := chap1
 all:
 	for i in $(DIRS); do \
 		(cd $$i && echo "making $$i" && $(MAKE)) || exit 1; \
