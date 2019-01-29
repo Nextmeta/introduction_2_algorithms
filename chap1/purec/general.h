@@ -14,6 +14,7 @@
 void print_array(int *A, int len, char *split)
 {
 	int i;
+	printf("The array is: ");
 	for (i = 0; i < len; i++)
 		printf("%d%s", A[i], split);
 }

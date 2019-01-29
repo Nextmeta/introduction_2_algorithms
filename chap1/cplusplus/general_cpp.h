@@ -8,14 +8,18 @@
 #ifndef _GENERAL_H
 #define _GENERAL_H
 
+#define viterator(type)	std::vector<type>::iterator 
+
 #include <iostream>
 #include <vector>
 #include <stdlib.h>
 
-void print_vector(std::vector<int> &v, std::string &s)
+void print_vector(std::vector<int> &v, const std::string &s)
 {
-	for (std::vector<int>::iterator it = v.begin();
+	std::cout << "The array is: ";
+	for (viterator(int) it = v.begin();
 			it != v.end(); it++)
 		std::cout << *it << s;
+
 }
 #endif 

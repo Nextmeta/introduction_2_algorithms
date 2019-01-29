@@ -13,7 +13,7 @@ void insertion_sort(vector<int> &V);
 int main(void)
 {
 	vector<int> v = {5, 2, 4, 6, 1, 3};
-	string split = " ";
+	const string split = " ";
 	insertion_sort(v);
 	print_vector(v, split);
 	putchar('\n');

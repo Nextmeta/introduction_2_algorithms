@@ -6,14 +6,24 @@
  */
 
 .section .data
+_format1:
+	.asciz "The array is: "
 _format_print_array:
-	.asciz "%d\n"
+	.asciz "%d "
+_newline:
+	.asciz "\n"
 .section .text
 .type print_array, @function 
 .globl print_array 
 print_array:
 	pushl 	%ebp
 	movl 	%esp, %ebp
+	pusha 
+	pushl 	$_format1
+	call 	printf
+	addl 	$4, %esp 
+	popa 
+	
 	movl 	8(%ebp), %eax
 	movl 	12(%ebp), %ecx
 	movl 	$0, %edi 
@@ -30,6 +40,12 @@ print_array:
 	incl 	%edi 
 	cmpl 	%ecx, %edi
 	jne 	.L0
+	
+	pusha 
+	pushl 	$_newline
+	call 	printf
+	addl 	$4, %esp 
+	popa 
 
 	movl 	%ebp, %esp
 	popl 	%ebp 
